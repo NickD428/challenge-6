@@ -47,3 +47,28 @@ searchForm.addEventListener('submit', function(event) {
   
     currentWeatherDiv.innerHTML = currentWeatherHTML;
   }
+
+  function displayForecast(data) {
+    // Display forecast
+    const forecastItems = data.list.slice(0, 5); // Display 5-day forecast
+  
+    let forecastHTML = '';
+    forecastItems.forEach(item => {
+      const { dt, weather, main, wind } = item;
+  
+      const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
+      const date = new Date(dt * 1000).toLocaleDateString();
+  
+      forecastHTML += `
+        <div>
+          <p>Date: ${date}</p>
+          <img src="${iconUrl}" alt="${weather[0].description}">
+          <p>Temperature: ${main.temp}°C</p>
+          <p>Humidity: ${main.humidity}%</p>
+          <p>Wind Speed: ${wind.speed} m/s</p>
+        </div>
+      `;
+    });
+  
+    forecastDiv.innerHTML = forecastHTML;
+  }
