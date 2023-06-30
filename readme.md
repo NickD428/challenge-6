@@ -34,3 +34,4 @@
   Check out my other works here! https://github.com/NickD428
   Questions? Contact me here: chargerfan428@aol.com
   
+![weather app](https://github.com/NickD428/weather-app/assets/126355678/387e8eb2-6853-47b7-842b-e7b58c05fdf4)
