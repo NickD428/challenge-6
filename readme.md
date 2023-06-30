@@ -19,8 +19,7 @@
   to look up weather for any location
   
   ## License
-  This project is covered by the None License!
-  Any questions about this please read more here: 
+  This project has no licensing! 
 
 
   ## Contributing
