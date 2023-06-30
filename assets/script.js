@@ -28,3 +28,22 @@ searchForm.addEventListener('submit', function(event) {
         console.log('Error:', error);
       });
   }
+
+  function displayCurrentWeather(data) {
+    // Display current weather
+    const { name, dt, weather, main, wind } = data;
+  
+    const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
+    const date = new Date(dt * 1000).toLocaleDateString();
+  
+    const currentWeatherHTML = `
+      <h2>${name}</h2>
+      <p>Date: ${date}</p>
+      <img src="${iconUrl}" alt="${weather[0].description}">
+      <p>Temperature: ${main.temp}°C</p>
+      <p>Humidity: ${main.humidity}%</p>
+      <p>Wind Speed: ${wind.speed} m/s</p>
+    `;
+  
+    currentWeatherDiv.innerHTML = currentWeatherHTML;
+  }
